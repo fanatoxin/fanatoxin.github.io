@@ -1,0 +1,129 @@
+html {
+    background-color: #FFCCFF;
+}
+
+body {
+    font-family: Arial, 'óVÉSÉVÉbÉN', 'ÉÅÉCÉäÉI', 'Helvetica Neue', 'ÉqÉâÉMÉmä€ÉS ProN', 'ÉqÉâÉMÉmäpÉS ProN', sans-seif;
+    line-height: normal;
+    margin: 1em;
+    vertical-align: baseline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    font-size: medium;
+}
+
+h1 {
+    font-size: xx-large;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-size: x-large;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: large;
+    line-height: 1.5em;
+}
+
+h4 {
+    line-height: 1.5em;
+}
+
+p {
+    margin-top: 0.25em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+pre {
+    margin-top: 0.5em;
+    margin-top: 0.5em;
+    border: thin solid olive;
+    background-color: beige;
+    padding: 0.75em;
+    font-size: medium;
+    font-family: 'Consolas', 'Inconsolata', 'Courier New', 'Courier', monospace, serif;
+    color: blue;
+}
+
+code {
+    font-family: 'Consolas', 'Inconsolata', 'Courier New', 'Courier', monospace, serif;
+    color: blue;
+}
+
+ul {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 2em;
+    margin-right: 0;
+    list-style: circle;
+}
+
+a {
+    font-size:100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+table {
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    border: 0;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+td {
+    border: 0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table.bordered {
+    border: thin solid olive;
+}
+
+table.bordered th {
+    background-color: gainsboro;
+    border: thin solid olive;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    vertical-align: middle;
+}
+
+table.bordered td {
+    background-color: beige;
+    border: thin solid olive;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    vertical-align: middle;
+}
+
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+.tac {
+    text-align: center;
+}

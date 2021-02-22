@@ -1,0 +1,17 @@
+a.logo {
+  color: red;
+  text-decoration: none;
+}
+
+p.logo {
+  text-align: center;
+  font-size: xx-large;
+}
+
+span.logo {
+  font-size:larger
+}
+
+ul {
+  list-style: none;
+}
