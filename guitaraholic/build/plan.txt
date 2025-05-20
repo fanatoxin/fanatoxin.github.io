@@ -1,0 +1,23 @@
+スケール練習
+    "Intervals": [
+        { "name": "per1", "step": 0 },
+        { "name": "min2", "step": 1 },
+    ]
+    "Scales": [
+        { "name": "Ionian", "abbr" : "ion", "notes" : ["per1", "maj2", "maj3", "per4", "per5", "maj6", "maj7"] },
+        { "name": "Dorian", "abbr" : "dor", "notes" : ["per1", "maj2", "min3", "per4", "per5", "maj6", "min7"] },
+        { "name": "Phrygian", "abbr" : "phr", "notes" : ["per1", ･･･] },
+        { "name": "Lydian", "abbr" : "lyd", "notes" : ["per1", ･･･] },
+        { "name": "Mixolydian", "abbr" : "mixlyd", "notes" : ["per1", ･･･] },
+        { "name": "Aeolian", "abbr" : "aeo", "notes" : ["per1", ･･･] },
+        { "name": "Locrian", "abbr" : "loc", "notes" : ["per1", ･･･] },
+        { "name": "Harmonic Minor", "abbr": "harmin", "notes" : ["per1", ･･･] },
+        { "name": "Melodic Minor", "abbr": "harmin", "notes" : ["per1", ･･･] },
+        { "name": "Phrygian Dominant", "abbr": "phrdom", "notes" : ["per1", ･･･] },
+        { "name": "Lydian Dominant", "abbr": "lyddom", "notes" : ["per1", ･･･] },
+        { "name": "Super Locrian", "abbr": "suploc", "notes" : ["per1", ･･･] },
+    ]
+
+Modal なスケールなら 3NPS の運指を自動生成できるか?
+3NPS がハマらないスケールをどうするか?
+    Pentatonic, Hole Tone
