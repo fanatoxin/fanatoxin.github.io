@@ -6,6 +6,8 @@ const build = (): void => {
         if (scale.type === "modal" || scale.type === "altered") {
             for (let root of roots) {
                 console.log(root + " " + scale.name);
+                const filename = scale.abbr + "-" + root.toLowerCase().replace("#", "s") + ".html"
+                console.log(filename)
             }
         }
     }

@@ -1,4 +1,4 @@
-// 音名 + オクターブ番号の文字列と MIDI ノート番号の対応表です.
+// 音名 + オクターブ番号の文字列と MIDI ノート番号
 // 例えばピアノ中央のドなら
 //     notes["C4"].mnn
 // で MIDI ノート番号が得られます.
@@ -383,7 +383,7 @@ export const notes = {
   Abb9: { mnn: 127, oct: 9 },
 };
 
-// 音程名と半音数の対応表です.
+// 音程名と半音数
 // 音程名は maj, min, per, aug, dim + 度数です.
 export const intervals = {
   per1: 0,
