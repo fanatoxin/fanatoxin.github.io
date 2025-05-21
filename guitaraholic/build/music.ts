@@ -411,3 +411,13 @@ export const intervals = {
     min14: 22, aug13: 22,
     maj14: 23, dim15: 23,
 }
+
+
+const scales = [
+    { name: "Ionian"          , type: "Modal"     , composition: ["per1", "maj2", "maj3", "per4", "per5", "maj6", "maj7"] },
+    { name: "Lydian Dominant" , type: "Altered"   , composition: [] },
+    { name: "Whole Tone"      , type: "Symmetric" , composition: ["per1", "maj2", "maj3", "aug4", "aug5", "aug6"] },
+    { name: "Diminished"      , type: "Symmetric" , composition: [] },
+    { name: "Major Pentatonic", type: "Pentatonic", composition: [] },
+    { name: "Minor Pentatonic", type: "Pentatonic", composition: [] },
+]
