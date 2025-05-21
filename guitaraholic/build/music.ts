@@ -5,8 +5,8 @@
 // オクターブ番号は
 //     Scientific Pitch Notation
 //     https://en.wikipedia.org/wiki/Scientific_pitch_notation
-// に合わせたため MIDI ノート番号 0 から 11 のオクターブ番号が -1 です.
-// 変記号は形が似ている b (B の小文字), 嬰記号は形が似ている # を当てます.
+// に合わせたため MIDI ノート番号 0 から 11 のオクターブ番号が -1 となっています.
+// 変記号には形が似ている b (B の小文字) を, 嬰記号には形が似ている # を当てます.
 export const notes = {
   CL: { mnn: 0, oct: -1 },
   DbbL: { mnn: 0, oct: -1 },
@@ -43,7 +43,7 @@ export const notes = {
   BL: { mnn: 11, oct: -1 },
   CbL: { mnn: 11, oct: -1 },
   "B#L": { mnn: 12, oct: 0 },
-  C0: { mnn: 12, oct: 0 }, // Bö#endorfer Model 290 Imperial の最低音
+  C0: { mnn: 12, oct: 0 }, // Bösendorfer Model 290 Imperial の最低音
   Dbb0: { mnn: 12, oct: 0 },
   "B##0": { mnn: 13, oct: 0 },
   "C#0": { mnn: 13, oct: 0 },
@@ -439,16 +439,33 @@ export const intervals = {
 const scales = [
   {
     name: "Ionian",
+    abbr: "ion",
     type: "Modal",
     composition: ["per1", "maj2", "maj3", "per4", "per5", "maj6", "maj7"],
   },
-  { name: "Lydian Dominant", type: "Altered", composition: [] },
+  {
+    name: "Dorian",
+    abbr: "dor",
+    type: "Modal",
+    composition: ["per1", "maj2", "min3", "per4", "per5", "maj6", "min7"],
+  },
+  { name: "Phrygian", abbr: "phr", type: "Modal", composition: [], },
+  { name: "Lydian", abbr: "lyd", type: "Modal", composition: [], },
+  { name: "Mixolydian", abbr: "mixlyd", type: "Modal", composition: [], },
+  { name: "Aeolian", abbr: "aeo", type: "Modal", composition: [], },
+  { name: "Locrian", abbr: "loc", type: "Modal", composition: [], },
+  { name: "Harmonic Minor", abbr: "harmin", type: "Altered", composition: [] },
+  { name: "Melodic Minor", abbr: "mermin", type: "Altered", composition: [] },
+  { name: "Phrygian Dominant", abbr: "phrdom", type: "Altered", composition: [] },
+  { name: "Lydian Dominant", abbr: "lyddom", type: "Altered", composition: [] },
+  { name: "Super Locrian", abbr: "suploc", type: "Altered", composition: [] },
   {
     name: "Whole Tone",
+    abbr: "wt",
     type: "Symmetric",
     composition: ["per1", "maj2", "maj3", "aug4", "aug5", "aug6"],
   },
-  { name: "Diminished", type: "Symmetric", composition: [] },
-  { name: "Major Pentatonic", type: "Pentatonic", composition: [] },
-  { name: "Minor Pentatonic", type: "Pentatonic", composition: [] },
+  { name: "Diminished", abbr: "dim", type: "Symmetric", composition: [] },
+  { name: "Major Pentatonic", abbr: "majpen", type: "Pentatonic", composition: [] },
+  { name: "Minor Pentatonic", abbr: "minpen", type: "Pentatonic", composition: [] },
 ];
