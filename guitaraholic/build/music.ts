@@ -436,7 +436,7 @@ export const intervals = {
   dim15: 23,
 };
 
-const scales = [
+export const scales = [
   {
     name: "Ionian",
     abbr: "ion",
@@ -449,23 +449,23 @@ const scales = [
     type: "Modal",
     composition: ["per1", "maj2", "min3", "per4", "per5", "maj6", "min7"],
   },
-  { name: "Phrygian", abbr: "phr", type: "Modal", composition: [], },
-  { name: "Lydian", abbr: "lyd", type: "Modal", composition: [], },
-  { name: "Mixolydian", abbr: "mixlyd", type: "Modal", composition: [], },
-  { name: "Aeolian", abbr: "aeo", type: "Modal", composition: [], },
-  { name: "Locrian", abbr: "loc", type: "Modal", composition: [], },
-  { name: "Harmonic Minor", abbr: "harmin", type: "Altered", composition: [] },
-  { name: "Melodic Minor", abbr: "mermin", type: "Altered", composition: [] },
-  { name: "Phrygian Dominant", abbr: "phrdom", type: "Altered", composition: [] },
-  { name: "Lydian Dominant", abbr: "lyddom", type: "Altered", composition: [] },
-  { name: "Super Locrian", abbr: "suploc", type: "Altered", composition: [] },
+  { name: "Phrygian", abbr: "phr", type: "modal", composition: [], },
+  { name: "Lydian", abbr: "lyd", type: "modal", composition: [], },
+  { name: "Mixolydian", abbr: "mixlyd", type: "modal", composition: [], },
+  { name: "Aeolian", abbr: "aeo", type: "modal", composition: [], },
+  { name: "Locrian", abbr: "loc", type: "modal", composition: [], },
+  { name: "Harmonic Minor", abbr: "harmin", type: "altered", composition: [] },
+  { name: "Melodic Minor", abbr: "mermin", type: "altered", composition: [] },
+  { name: "Phrygian Dominant", abbr: "phrdom", type: "altered", composition: [] },
+  { name: "Lydian Dominant", abbr: "lyddom", type: "altered", composition: [] },
+  { name: "Super Locrian", abbr: "suploc", type: "altered", composition: [] },
   {
     name: "Whole Tone",
     abbr: "wt",
-    type: "Symmetric",
+    type: "symmetric",
     composition: ["per1", "maj2", "maj3", "aug4", "aug5", "aug6"],
   },
-  { name: "Diminished", abbr: "dim", type: "Symmetric", composition: [] },
-  { name: "Major Pentatonic", abbr: "majpen", type: "Pentatonic", composition: [] },
-  { name: "Minor Pentatonic", abbr: "minpen", type: "Pentatonic", composition: [] },
+  { name: "Diminished", abbr: "dim", type: "symmetric", composition: [] },
+  { name: "Major Pentatonic", abbr: "majpen", type: "pentatonic", composition: [] },
+  { name: "Minor Pentatonic", abbr: "minpen", type: "pentatonic", composition: [] },
 ];

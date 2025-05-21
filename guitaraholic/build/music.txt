@@ -165,3 +165,20 @@ Minor Scales:
     Bb Minor: Bb -  C  Db -  Eb -  F  Gb -  Ab -  Bb
     Eb Minor: Eb -  F  Gb -  Ab -  Bb Cb -  Db -  Eb
 
+------------------------------------------------------------------------
+Scales
+
+                  | per1 | min2 | maj2 | min3 | maj3 | per4 | dim5 | per5 | min6 | maj6 | min7 | maj7 |
+Ionian            | per1 |      | maj2 |      | maj3 | per4 |      | per5 |      | maj6 |      | maj7 |
+Dorian            | per1 |      | maj2 | min3 |      | per4 |      | per5 |      | maj6 | min7 |      |
+Phrygian          | per1 | min2 |      | min3 |      | per4 |      | per5 | min6 |      | min7 |      |
+Lydian            | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Mixolydian        | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Aeolian           | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Locrian           | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Harmonic Minor    | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Melodic Minor     | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Phrygian Dominant | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Lydian Dominant   | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Super Locrian     | per1 |      |      |      |      |      |      |      |      |      |      |      |
+Whole Tone        | per1 |      | maj2 |      | maj3 |      | aug4 |      | aug5 |      | aug6 |      |
