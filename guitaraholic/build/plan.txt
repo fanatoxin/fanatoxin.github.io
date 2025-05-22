@@ -66,13 +66,13 @@ exScales = [
               { degree: 1, string: 6, fret: 3 },
               { degree: 2, string: 6, fret: 4 },
               { degree: 3, string: 6, fret: 6 },
-              еее
+              я╜ея╜ея╜е
             ]
           },
-          еее
+          я╜ея╜ея╜е
         ],
       },
     ]
   },
-  еее
+  я╜ея╜ея╜е
 ]
