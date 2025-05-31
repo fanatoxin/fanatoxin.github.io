@@ -1,33 +1,44 @@
-import { intervals } from "./music.ts";
-import { Scale, scales } from "./ex-scales.ts";
+import { Interval, intervals } from "./music.ts";
+import { Scale, scales } from "./ex-scale.ts";
 
 const build_pattern = (scale: Scale, pattern: string) => {
   let start = 1;
   switch (pattern) {
     case "6/1":
-      start = 1;
+      start = 0;
       break;
     case "6/2":
-      start = 7;
-      break;
-    case "6/3":
       start = 6;
       break;
-    case "5/1":
+    case "6/3":
       start = 5;
       break;
-    case "5/2":
+    case "5/1":
       start = 4;
       break;
-    case "5/3":
+    case "5/2":
       start = 3;
       break;
-    case "4/1":
+    case "5/3":
       start = 2;
+      break;
+    case "4/1":
+      start = 1;
       break;
   }
 
-  return scalePattern;
+  let intervals: Interval[] = []
+  for (let i = 0; i < 7; i++) {
+    const degree = (start + I) % 7 + 1;
+    const interval = scale.getInterval(degree);
+    if (interval != null) {
+      intervals.push(interval);
+    }
+  }
+
+  
+
+  return scale;
 };
 
 const build = (): void => {
