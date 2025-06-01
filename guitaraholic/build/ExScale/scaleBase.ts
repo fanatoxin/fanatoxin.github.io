@@ -1,20 +1,9 @@
 import { Interval, getInterval } from "./music";
 
-export type Position = {
-  str: number;
-  fret: number;
-};
-
-export class Pattern {
-  name: string;
-  positions: Position[];
-}
-
-export class Scale {
+export class ScaleBase {
   name: string;
   abbr: string;
   intervals: Interval[];
-  patterns: Pattern[];
 
   constructor(name: string, abbr: string, intervalNames: string[] | null) {
     this.name = name;
@@ -37,33 +26,33 @@ export class Scale {
   }
 }
 
-export let scales: Scale[] = [
-  new Scale(
+export const scaleBases: ScaleBase[] = [
+  new ScaleBase(
     "Ionian",
     "ion",
     ["per1", "maj2", "maj3", "per4", "per5", "maj6", "maj7"]
   ),
-  new Scale(
+  new ScaleBase(
     "Dorian",
     "dor",
     ["per1", "maj2", "min3", "per4", "per5", "maj6", "min7"]
   ),
-  new Scale("Phrygian", "phr", []),
-  new Scale("Lydian", "lyd", []),
-  new Scale("Mixolydian", "mixlyd", []),
-  new Scale("Aeolian", "aeo", []),
-  new Scale("Locrian", "loc", []),
-  new Scale("Harmonic Minor", "harmin", []),
-  new Scale("Melodic Minor", "mermin", []),
-  new Scale("Phrygian Dominant", "phrdom", []),
-  new Scale("Lydian Dominant", "lyddom", []),
-  new Scale("Super Locrian", "suploc", []),
-  new Scale(
+  new ScaleBase("Phrygian", "phr", []),
+  new ScaleBase("Lydian", "lyd", []),
+  new ScaleBase("Mixolydian", "mixlyd", []),
+  new ScaleBase("Aeolian", "aeo", []),
+  new ScaleBase("Locrian", "loc", []),
+  new ScaleBase("Harmonic Minor", "harmin", []),
+  new ScaleBase("Melodic Minor", "mermin", []),
+  new ScaleBase("Phrygian Dominant", "phrdom", []),
+  new ScaleBase("Lydian Dominant", "lyddom", []),
+  new ScaleBase("Super Locrian", "suploc", []),
+  new ScaleBase(
     "Whole Tone",
     "wt",
     ["per1", "maj2", "maj3", "aug4", "aug5", "aug6"]
   ),
-  new Scale("Diminished", "dim", []),
-  new Scale("Major Pentatonic", "majpen", []),
-  new Scale("Minor Pentatonic", "minpen", []),
+  new ScaleBase("Diminished", "dim", []),
+  new ScaleBase("Major Pentatonic", "majpen", []),
+  new ScaleBase("Minor Pentatonic", "minpen", []),
 ];
