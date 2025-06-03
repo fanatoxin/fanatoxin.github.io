@@ -1,10 +1,10 @@
 // Run following command in PowerShell
 // > deno --allow-write ./build1.ts
 
-import { Interval, getInterval, intervals, Pitch, getPitch } from "../music.ts";
+import { Interval, getIntervalByName, intervals, Pitch, getPitchByName } from "../music.ts";
 import { ScaleBase, scaleBases } from "./scaleBase.ts";
 import { ScalePattern, Pattern } from "./scalePattern.ts";
-import { tuning, getFret } from "../guitar.ts";
+import { tuning, getFretByMnn } from "../guitar.ts";
 
 const makePattern = (scale: ScaleBase, patternName: string): Pattern => {
   let pattern: Pattern = { name: patternName, positions: [] };
@@ -38,12 +38,12 @@ const makePattern = (scale: ScaleBase, patternName: string): Pattern => {
     } else {
       let mnn =
         e3.mnn +
-        scale.getInterval(degree - 1).step -
-        scale.getInterval(lowestIndex).step;
+        scale.getIntervalByName(degree - 1).step -
+        scale.getIntervalByName(lowestIndex).step;
       while (mnn < lastMnn) {
         mnn += 12;
       }
-      const fret = getFret(str, mnn);
+      const fret = getFretByMnn(str, mnn);
       pattern.positions.push({ str: str, fret: fret, degree: degree });
       lastMnn = mnn;
     }

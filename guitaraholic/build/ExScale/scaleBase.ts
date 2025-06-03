@@ -1,4 +1,4 @@
-import { Interval, getInterval } from "../music.ts";
+import { Interval, getIntervalByName } from "../music.ts";
 
 export class ScaleBase {
   name: string;
@@ -11,12 +11,12 @@ export class ScaleBase {
     this.intervals = [];
     if (intervalNames && 0 < intervalNames.length) {
       for (name of intervalNames) {
-        this.intervals.push(getInterval(name));
+        this.intervals.push(getIntervalByName(name));
       }
     }
   }
 
-  getInterval(index: number): Interval {
+  getIntervalByName(index: number): Interval {
     let subIndex = index;
     while (subIndex < 0) {
       subIndex += this.intervals.length;
