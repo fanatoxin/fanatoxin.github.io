@@ -1,61 +1,86 @@
-import { Interval, getInterval, intervals } from "./music.ts";
+// Run following command in PowerShell
+// > deno --allow-write ./build1.ts
+
+import { Interval, getInterval, intervals, Pitch, getPitch } from "../music.ts";
 import { ScaleBase, scaleBases } from "./scaleBase.ts";
-import { ScalePattern } from "./scalePattern.ts";
+import { ScalePattern, Pattern } from "./scalePattern.ts";
+import { tuning, getFret } from "../guitar.ts";
 
-const build_pattern = (scale: ScaleBase, pattern: string): ScalePattern => {
-   let scalePattern = new ScalePattern();
+const makePattern = (scale: ScaleBase, patternName: string): Pattern => {
+  let pattern: Pattern = { name: patternName, positions: [] };
 
-  let start = 1;
-  switch (pattern) {
-    case "6/1":
-      start = 0;
-      break;
-    case "6/2":
-      start = 6;
-      break;
-    case "6/3":
-      start = 5;
-      break;
-    case "5/1":
-      start = 4;
-      break;
-    case "5/2":
-      start = 3;
-      break;
-    case "5/3":
-      start = 2;
-      break;
-    case "4/1":
-      start = 1;
-      break;
+  let lowestIndex = 0;
+  if (patternName === "6/1") {
+    lowestIndex = 0;
+  } else if (patternName === "6/2") {
+    lowestIndex = 6;
+  } else if (patternName === "6/3") {
+    lowestIndex = 5;
+  } else if (patternName === "5/1") {
+    lowestIndex = 4;
+  } else if (patternName === "5/2") {
+    lowestIndex = 3;
+  } else if (patternName === "5/3") {
+    lowestIndex = 2;
+  } else if (patternName === "4/1") {
+    lowestIndex = 1;
   }
 
-  let intervals: Interval[] = []
-  for (let i = 0; i < 7; i++) {
-    const degree = (start + I) % 7 + 1;
-    const interval = scale.getInterval(degree);
-    if (interval != null) {
-      intervals.push(interval);
+  const e3 = tuning[6];
+  let degree = lowestIndex + 1;
+  let lastMnn = e3.mnn;
+  for (let i = 0; i < 18; i++) {
+    const str = 6 - Math.floor(i / 3);
+    const index = i % scale.intervals.length;
+    let mnn = e3.mnn;
+    if (i == 0) {
+      pattern.positions.push({ str: str, fret: 0, degree: degree });
+    } else {
+      let mnn =
+        e3.mnn +
+        scale.getInterval(degree - 1).step -
+        scale.getInterval(lowestIndex).step;
+      while (mnn < lastMnn) {
+        mnn += 12;
+      }
+      const fret = getFret(str, mnn);
+      pattern.positions.push({ str: str, fret: fret, degree: degree });
+      lastMnn = mnn;
+    }
+    degree++;
+    if (7 < degree) {
+      degree = 1;
     }
   }
 
-  
-
-  return scalePattern;
+  return pattern;
 };
 
 const build = (): void => {
-  for (let base of scaleBases) {
-    if (base.intervals.length == 7) {
-      const pattern_61 = build_pattern(base, "6/1");
-      const pattern_62 = build_pattern(base, "6/2");
-      const pattern_63 = build_pattern(base, "6/3");
-      const pattern_51 = build_pattern(base, "5/1");
-      const pattern_52 = build_pattern(base, "5/2");
-      const pattern_53 = build_pattern(base, "5/3");
-      const pattern_41 = build_pattern(base, "4/1");
+  let scalePatternBases: ScalePattern[] = [];
+  for (let scaleBase of scaleBases) {
+    if (scaleBase.intervals.length == 7) {
+      let scalePattern = new ScalePattern();
+      scalePattern.name = scaleBase.name;
+      scalePattern.abbr = scaleBase.abbr;
+      scalePattern.key = "X";
+      scalePattern.patterns = [];
+      const pattern: Pattern = makePattern(scaleBase, "6/1");
+      scalePattern.patterns.push(makePattern(scaleBase, "6/1"));
+      scalePattern.patterns.push(makePattern(scaleBase, "6/2"));
+      scalePattern.patterns.push(makePattern(scaleBase, "6/3"));
+      scalePattern.patterns.push(makePattern(scaleBase, "5/1"));
+      scalePattern.patterns.push(makePattern(scaleBase, "5/2"));
+      scalePattern.patterns.push(makePattern(scaleBase, "5/3"));
+      scalePattern.patterns.push(makePattern(scaleBase, "4/1"));
+      scalePatternBases.push(scalePattern);
     }
   }
+
+  const write = Deno.writeTextFileSync(
+    "./scalePatternBases.json",
+    JSON.stringify(scalePatternBases)
+  );
 };
 
 build();

@@ -11,6 +11,7 @@ export class Pattern {
 
 export class ScalePattern {
   name: string;
+  abbr: string;
   key: string;
   patterns: Pattern[];
 }
