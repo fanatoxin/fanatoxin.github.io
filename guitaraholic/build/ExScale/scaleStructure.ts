@@ -1,6 +1,6 @@
 import { Interval, getIntervalByName } from "../music.ts";
 
-export class ScaleBase {
+export class ScaleStructure {
   name: string;
   abbr: string;
   intervals: Interval[];
@@ -28,8 +28,8 @@ export class ScaleBase {
   }
 }
 
-export const scaleBases: ScaleBase[] = [
-  new ScaleBase("Ionian", "ion", [
+export const scaleStructures: ScaleStructure[] = [
+  new ScaleStructure("Ionian", "ion", [
     "per1",
     "maj2",
     "maj3",
@@ -38,7 +38,7 @@ export const scaleBases: ScaleBase[] = [
     "maj6",
     "maj7",
   ]),
-  new ScaleBase("Dorian", "dor", [
+  new ScaleStructure("Dorian", "dor", [
     "per1",
     "maj2",
     "min3",
@@ -47,17 +47,17 @@ export const scaleBases: ScaleBase[] = [
     "maj6",
     "min7",
   ]),
-  new ScaleBase("Phrygian", "phr", []),
-  new ScaleBase("Lydian", "lyd", []),
-  new ScaleBase("Mixolydian", "mixlyd", []),
-  new ScaleBase("Aeolian", "aeo", []),
-  new ScaleBase("Locrian", "loc", []),
-  new ScaleBase("Harmonic Minor", "harmin", []),
-  new ScaleBase("Melodic Minor", "mermin", []),
-  new ScaleBase("Phrygian Dominant", "phrdom", []),
-  new ScaleBase("Lydian Dominant", "lyddom", []),
-  new ScaleBase("Super Locrian", "suploc", []),
-  new ScaleBase("Whole Tone", "wt", [
+  new ScaleStructure("Phrygian", "phr", []),
+  new ScaleStructure("Lydian", "lyd", []),
+  new ScaleStructure("Mixolydian", "mixlyd", []),
+  new ScaleStructure("Aeolian", "aeo", []),
+  new ScaleStructure("Locrian", "loc", []),
+  new ScaleStructure("Harmonic Minor", "harmin", []),
+  new ScaleStructure("Melodic Minor", "mermin", []),
+  new ScaleStructure("Phrygian Dominant", "phrdom", []),
+  new ScaleStructure("Lydian Dominant", "lyddom", []),
+  new ScaleStructure("Super Locrian", "suploc", []),
+  new ScaleStructure("Whole Tone", "wt", [
     "per1",
     "maj2",
     "maj3",
@@ -65,7 +65,7 @@ export const scaleBases: ScaleBase[] = [
     "aug5",
     "aug6",
   ]),
-  new ScaleBase("Diminished", "dim", []),
-  new ScaleBase("Major Pentatonic", "majpen", []),
-  new ScaleBase("Minor Pentatonic", "minpen", []),
+  new ScaleStructure("Diminished", "dim", []),
+  new ScaleStructure("Major Pentatonic", "majpen", []),
+  new ScaleStructure("Minor Pentatonic", "minpen", []),
 ];
