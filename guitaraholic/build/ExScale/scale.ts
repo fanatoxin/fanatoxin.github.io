@@ -20,7 +20,7 @@ export class Pattern {
   }
 }
 
-export class ScalePattern {
+export class Scale {
   name: string;
   abbr: string;
   key: string;

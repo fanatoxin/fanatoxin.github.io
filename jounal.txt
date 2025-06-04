@@ -27,4 +27,3 @@ Deno のインストールは PowerShell から
 2025-06-04 (水)
     ScaleBase >>> ScaleStructure
     ScalePattern >>> Scale
-    Pattern >>> Position

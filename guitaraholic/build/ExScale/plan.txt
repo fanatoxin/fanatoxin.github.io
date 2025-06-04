@@ -1,4 +1,4 @@
-exScalePatterns = [
+exScaleSs = [
   {
     scale: "Super Locrian",
     patterns: [
