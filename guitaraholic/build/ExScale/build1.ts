@@ -2,12 +2,12 @@
 // > deno --allow-write ./build1.ts
 
 import { Interval, getIntervalByName, intervals, Pitch, getPitchByName } from "../music.ts";
-import { ScaleStructure, scaleStructures } from "./scaleStructure.ts";
-import { ScalePattern, Pattern } from "./scalePattern.ts";
 import { tuning, getFretByMnn } from "../guitar.ts";
+import { ScaleStructure, scaleStructures } from "./scaleStructure.ts";
+import { Scale, Pattern } from "./scale.ts";
 
 const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
-  let pattern: Pattern = { name: patternName, positions: [] };
+  let pattern: Pattern = { name: patternName, notes: [] };
 
   let lowestIndex = 0;
   if (patternName === "6/1") {
@@ -34,7 +34,7 @@ const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
     const index = i % scale.intervals.length;
     let mnn = e3.mnn;
     if (i == 0) {
-      pattern.positions.push({ str: str, fret: 0, degree: degree });
+      pattern.notes.push({ str: str, fret: 0, degree: degree });
     } else {
       let mnn =
         e3.mnn +
@@ -44,7 +44,7 @@ const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
         mnn += 12;
       }
       const fret = getFretByMnn(str, mnn);
-      pattern.positions.push({ str: str, fret: fret, degree: degree });
+      pattern.notes.push({ str: str, fret: fret, degree: degree });
       lastMnn = mnn;
     }
     degree++;
@@ -57,29 +57,29 @@ const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
 };
 
 const build = (): void => {
-  let scalePatternBases: ScalePattern[] = [];
+  let scaleBases: Scale[] = [];
   for (let scaleStructure of scaleStructures) {
     if (scaleStructure.intervals.length == 7) {
-      let scalePattern = new ScalePattern();
-      scalePattern.name = scaleStructure.name;
-      scalePattern.abbr = scaleStructure.abbr;
-      scalePattern.key = "X";
-      scalePattern.patterns = [];
+      let scale = new Scale();
+      scale.name = scaleStructure.name;
+      scale.abbr = scaleStructure.abbr;
+      scale.key = "X";
+      scale.patterns = [];
       const pattern: Pattern = makePattern(scaleStructure, "6/1");
-      scalePattern.patterns.push(makePattern(scaleStructure, "6/1"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "6/2"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "6/3"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "5/1"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "5/2"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "5/3"));
-      scalePattern.patterns.push(makePattern(scaleStructure, "4/1"));
-      scalePatternBases.push(scalePattern);
+      scale.patterns.push(makePattern(scaleStructure, "6/1"));
+      scale.patterns.push(makePattern(scaleStructure, "6/2"));
+      scale.patterns.push(makePattern(scaleStructure, "6/3"));
+      scale.patterns.push(makePattern(scaleStructure, "5/1"));
+      scale.patterns.push(makePattern(scaleStructure, "5/2"));
+      scale.patterns.push(makePattern(scaleStructure, "5/3"));
+      scale.patterns.push(makePattern(scaleStructure, "4/1"));
+      scaleBases.push(scale);
     }
   }
 
   const write = Deno.writeTextFileSync(
-    "./scalePatternBases.json",
-    JSON.stringify(scalePatternBases)
+    "./scaleBases.json",
+    JSON.stringify(scaleBases)
   );
 };
 

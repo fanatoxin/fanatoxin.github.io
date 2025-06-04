@@ -1,7 +1,7 @@
-Quickie
+Music
 
 ------------------------------------------------------------------------
-Midi Note Number List
+Midi Note Number
 
 MNN  Note Name  Frequency
 127  G9         12543.85395
@@ -134,6 +134,8 @@ MNN  Note Name  Frequency
   0  C-             8.17580
 
 ------------------------------------------------------------------------
+Scales (1)
+
 Major Scales:
     F# Major: F# -  G# -  A# B  -  C# -  D# -  E# F#
     B  Major: B  -  C# -  D# E  -  F# -  G# -  A# B
@@ -149,7 +151,6 @@ Major Scales:
     Db Major: Db -  Eb -  F  Gb -  Ab -  Bb -  C  Db
     Gb Major: Gb -  Ab -  Bb Cb -  Db -  Eb -  F  Gb
 
-------------------------------------------------------------------------
 Minor Scales:
     D# Minor: D# -  E# F# -  G# -  A# B  -  C# -  D#
     G# Minor: G# -  A# B  -  C# -  D# E  -  F# -  G#
@@ -166,7 +167,7 @@ Minor Scales:
     Eb Minor: Eb -  F  Gb -  Ab -  Bb Cb -  Db -  Eb
 
 ------------------------------------------------------------------------
-Scales
+Scales (2)
 
                   | per1 | min2 | maj2 | min3 | maj3 | per4 | dim5 | per5 | min6 | maj6 | min7 | maj7 |
 Ionian            | per1 |      | maj2 |      | maj3 | per4 |      | per5 |      | maj6 |      | maj7 |
