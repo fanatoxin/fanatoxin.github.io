@@ -23,3 +23,8 @@ Deno のインストールは PowerShell から
     >git config --global http.proxy http://proxy.ysk.co.jp:8080
     >git config --global https.proxy http://proxy.ysk.co.jp:8080
     >git clone https://fanatoxin@github.com/fanatoxin/fanatoxin.github.io.git
+
+2025-06-04 (水)
+    ScaleBase >>> ScaleStructure
+    ScalePattern >>> Scale
+    Pattern >>> Position
