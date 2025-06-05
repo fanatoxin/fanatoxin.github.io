@@ -57,7 +57,7 @@ const makePattern = (scale: ScaleStructure, name: string): Pattern => {
   return pattern;
 };
 
-const build = (): void => {
+const build1 = (): void => {
   let scaleBases: Scale[] = [];
   for (let scaleStructure of scaleStructures) {
     if (scaleStructure.intervals.length == 7) {
@@ -77,4 +77,4 @@ const build = (): void => {
   fileWrite("./scaleTemplates.json", JSON.stringify(scaleBases));
 };
 
-build();
+build1();

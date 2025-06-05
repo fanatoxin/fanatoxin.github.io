@@ -57,7 +57,7 @@ function makePattern(
   return pattern;
 }
 
-const build = (): void => {
+const build2 = (): void => {
   let scales: Scale[] = [];
 
   const roots = [
@@ -97,4 +97,4 @@ const build = (): void => {
   fileWrite("./scales.json", JSON.stringify(scales));
 };
 
-build();
+build2();
