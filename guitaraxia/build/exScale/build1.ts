@@ -1,6 +1,7 @@
 // Run following command in PowerShell
 // > deno --allow-write ./build1.ts
 
+import {fileWrite} from "../file.ts";
 import { Interval, getIntervalByName, intervals, Pitch, getPitchByName } from "../music.ts";
 import { tuning, getFretByMnn } from "../guitar.ts";
 import { ScaleStructure, scaleStructures } from "./scaleStructure.ts";
@@ -60,10 +61,7 @@ const build = (): void => {
   let scaleBases: Scale[] = [];
   for (let scaleStructure of scaleStructures) {
     if (scaleStructure.intervals.length == 7) {
-      let scale = new Scale();
-      scale.name = scaleStructure.name;
-      scale.abbr = scaleStructure.abbr;
-      scale.key = "X";
+      let scale = new Scale(scaleStructure.name,scaleStructure.abbr, "X");
       scale.patterns = [];
       scale.patterns.push(makePattern(scaleStructure, "6/1"));
       scale.patterns.push(makePattern(scaleStructure, "6/2"));
@@ -76,10 +74,7 @@ const build = (): void => {
     }
   }
 
-  const write = Deno.writeTextFileSync(
-    "./scaleBases.json",
-    JSON.stringify(scaleBases)
-  );
+  fileWrite("./scaleTemplates.json", JSON.stringify(scaleBases));
 };
 
 build();
