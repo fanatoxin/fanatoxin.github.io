@@ -3,31 +3,31 @@
 
 import {fileWrite} from "../file.ts";
 import { Interval, getIntervalByName, intervals, Pitch, getPitchByName } from "../music.ts";
-import { tuning, getFretByMnn } from "../guitar.ts";
+import { tunings, getFretByMnn } from "../guitar.ts";
 import { ScaleStructure, scaleStructures } from "./scaleStructure.ts";
 import { Scale, Pattern } from "./scale.ts";
 
-const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
-  let pattern: Pattern = { name: patternName, notes: [] };
+const makePattern = (scale: ScaleStructure, name: string): Pattern => {
+  let pattern: Pattern = { name: name, notes: [] };
 
   let lowestIndex = 0;
-  if (patternName === "6/1") {
+  if (name === "6/1") {
     lowestIndex = 0;
-  } else if (patternName === "6/2") {
+  } else if (name === "6/2") {
     lowestIndex = 6;
-  } else if (patternName === "6/4") {
+  } else if (name === "6/4") {
     lowestIndex = 5;
-  } else if (patternName === "5/1") {
+  } else if (name === "5/1") {
     lowestIndex = 4;
-  } else if (patternName === "5/2") {
+  } else if (name === "5/2") {
     lowestIndex = 3;
-  } else if (patternName === "5/4") {
+  } else if (name === "5/4") {
     lowestIndex = 2;
-  } else if (patternName === "4/1") {
+  } else if (name === "4/1") {
     lowestIndex = 1;
   }
 
-  const e3 = tuning[6];
+  const e3 = tunings[6];
   let degree = lowestIndex + 1;
   let lastMnn = e3.mnn;
   for (let i = 0; i < 18; i++) {

@@ -1,6 +1,6 @@
-import { Pitch, getPitchByName, isSyllable } from "./music.ts";
+import { Pitch, pitches, getPitchByName, isSyllable } from "./music.ts";
 
-export const tuning: Pitch[] = [
+export const tunings: Pitch[] = [
   getPitchByName["CL"],
   getPitchByName("E4"), // 1st
   getPitchByName("B3"), // 2nd
@@ -12,7 +12,7 @@ export const tuning: Pitch[] = [
 
 export function getFretByMnn(str: number, mnn: number): number {
   if (1 <= str && str <= 6 && 0 <= mnn && mnn <= 127) {
-    return mnn - tuning[str].mnn;
+    return mnn - tunings[str].mnn;
   } else {
     return 0;
   }
@@ -20,8 +20,12 @@ export function getFretByMnn(str: number, mnn: number): number {
 
 export function getFretBySyllable(str: number, syllable: string): number {
   if (isSyllable(syllable)) {
-    return 0; // todo: Implement It!
-  } else {
-    return 0;
+    const tuning = tunings[str];
+    for (let i = 0; pitches.length; i++) {
+      if (tuning.mnn <= pitches[i].mnn && pitches[i].syllable === syllable) {
+        return pitches[i].mnn - tuning.mnn;
+      }
+    }
   }
+  return 0;
 }

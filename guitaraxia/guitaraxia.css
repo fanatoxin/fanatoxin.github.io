@@ -48,7 +48,7 @@ body.centered {
 }
 
 h1.title {
-  font-size: 36pt;
+  font-size: 30pt;
   line-height: 36pt;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
@@ -58,6 +58,14 @@ h1.title {
 h2.title {
   font-size: 24pt;
   line-height: 24pt;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3.title {
+  font-size: 18pt;
+  line-height: 18pt;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-style: normal;
