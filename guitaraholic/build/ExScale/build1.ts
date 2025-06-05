@@ -14,13 +14,13 @@ const makePattern = (scale: ScaleStructure, patternName: string): Pattern => {
     lowestIndex = 0;
   } else if (patternName === "6/2") {
     lowestIndex = 6;
-  } else if (patternName === "6/3") {
+  } else if (patternName === "6/4") {
     lowestIndex = 5;
   } else if (patternName === "5/1") {
     lowestIndex = 4;
   } else if (patternName === "5/2") {
     lowestIndex = 3;
-  } else if (patternName === "5/3") {
+  } else if (patternName === "5/4") {
     lowestIndex = 2;
   } else if (patternName === "4/1") {
     lowestIndex = 1;
@@ -65,13 +65,12 @@ const build = (): void => {
       scale.abbr = scaleStructure.abbr;
       scale.key = "X";
       scale.patterns = [];
-      const pattern: Pattern = makePattern(scaleStructure, "6/1");
       scale.patterns.push(makePattern(scaleStructure, "6/1"));
       scale.patterns.push(makePattern(scaleStructure, "6/2"));
-      scale.patterns.push(makePattern(scaleStructure, "6/3"));
+      scale.patterns.push(makePattern(scaleStructure, "6/4"));
       scale.patterns.push(makePattern(scaleStructure, "5/1"));
       scale.patterns.push(makePattern(scaleStructure, "5/2"));
-      scale.patterns.push(makePattern(scaleStructure, "5/3"));
+      scale.patterns.push(makePattern(scaleStructure, "5/4"));
       scale.patterns.push(makePattern(scaleStructure, "4/1"));
       scaleBases.push(scale);
     }
