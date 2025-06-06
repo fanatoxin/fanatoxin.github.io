@@ -7,7 +7,7 @@ export class NamedValue {
         this.value = value;
     }
 
-    static get(namedValues: NamedValue[], name: string): string | null {
+    static getValue(namedValues: NamedValue[], name: string): string | null {
         for (let namedValue of namedValues) {
             if (namedValue.name === name) {
                 return namedValue.value;
