@@ -19,7 +19,7 @@ function build3(): void {
       new NamedValue("main", "***")
     ];
     const htmlModified = embed(htmlTemplate, embeddings);
-    fileWrite("results/" + fileName, htmlModified);
+    fileWrite("../results/exercises/scales/" + fileName, htmlModified);
   }
 }
 
